@@ -1,0 +1,3 @@
+comolo_branding_redirect:
+    path:      /comolo
+    defaults:  { _controller: ComoloContaoBrandingBundle:Backend:redirectToContao }
