@@ -2,6 +2,6 @@
 #container h1 {
 	background-color: #51b964;
 	color: rgba(0,0,0,0);
-	background-image: url("/bundles/comolocontaobranding/img/comolo-logo.svg");
+	background-image: url("../img/comolo-logo.svg");
 	background-size: 117px;
 }

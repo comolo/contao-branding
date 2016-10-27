@@ -17,7 +17,7 @@ class BrandingManager
 		if ($strTemplate == 'be_login')
         {
 			$searchString = '</head>';
-            $cssLink = PHP_EOL . '<link rel="stylesheet" href="/bundles/comolocontaobranding/css/login.css">' . PHP_EOL;
+            $cssLink = PHP_EOL.'<link rel="stylesheet" href="'.\Environment::path().'/bundles/comolocontaobranding/css/login.css">'.PHP_EOL;
             $strContent = str_replace($searchString, $cssLink.$searchString, $strContent);
 		}
 

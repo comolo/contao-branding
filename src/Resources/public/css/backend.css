@@ -3,7 +3,7 @@
 	background: #51b964;
 }
 #header h1 a {
-	background-image: url("/bundles/comolocontaobranding/img/comolo-logo.svg");
+	background-image: url("../img/comolo-logo.svg");
 	background-size: 117px;
 	color: rgba(0,0,0,0);
 	padding-left: 60px;
