@@ -10,14 +10,18 @@
  */
 namespace Comolo\Contao\BrandingBundle\Module;
 
+use Environment;
+
 class BrandingManager
 {
 	public function parseBackendTemplate($strContent, $strTemplate)
 	{
 		if ($strTemplate == 'be_login')
         {
+			$environment = Environment::getInstance();
+
 			$searchString = '</head>';
-            $cssLink = PHP_EOL.'<link rel="stylesheet" href="'.\Environment::path.'/bundles/comolocontaobranding/css/login.css">'.PHP_EOL;
+            $cssLink = PHP_EOL.'<link rel="stylesheet" href="'.$environment->path.'/bundles/comolocontaobranding/css/login.css">'.PHP_EOL;
             $strContent = str_replace($searchString, $cssLink.$searchString, $strContent);
 		}
 
