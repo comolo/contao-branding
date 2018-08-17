@@ -1,5 +1,4 @@
 /* Main Contao Page */
-#header,
 #header .inner  {
 	background: #51b964;
 }
@@ -18,10 +17,15 @@
 
 @media (max-width: 595px)
     #header h1 a {
+        background:none;
         display:none;
     }
 }
 
 #tl_navigation .tl_level_2 li.active {
     border-left-color: #51b964;
+}
+
+#tmenu a:hover, #tmenu li:hover h2, #tmenu .burger button:hover {
+    background-color:#45a557;
 }
