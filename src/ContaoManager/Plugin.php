@@ -8,7 +8,7 @@
  * @copyright 2017 Comolo GmbH <https://www.comolo.de/>
  * @license   proprietary
  */
-namespace Comolo\SuperThemeBundle\ContaoManager;
+namespace Comolo\ContaoBrandingBundle\ContaoManager;
 use Contao\CoreBundle\ContaoCoreBundle;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
