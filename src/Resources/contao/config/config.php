@@ -17,4 +17,4 @@ if (TL_MODE == 'BE') {
 	$GLOBALS['TL_CSS'][] = $environment->path.'/bundles/comolocontaobranding/css/backend.css';
 }
 
-$GLOBALS['TL_HOOKS']['parseBackendTemplate'][] = array(\Comolo\ContaoBrandingBundle\Module\BrandingManager:class, 'parseBackendTemplate');
+$GLOBALS['TL_HOOKS']['parseBackendTemplate'][] = array(\Comolo\ContaoBrandingBundle\Module\BrandingManager::class, 'parseBackendTemplate');
