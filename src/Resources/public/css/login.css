@@ -1,7 +1,3 @@
-/* Login Page */
-#container h1 {
-	background-color: #51b964;
-	color: rgba(0,0,0,0);
-	background-image: url("../img/comolo-logo.svg");
-	background-size: 117px;
+body {
+    background-image: url("../img/comolo-logo.svg");
 }

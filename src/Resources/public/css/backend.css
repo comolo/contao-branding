@@ -1,10 +1,27 @@
 /* Main Contao Page */
-#header {
+#header,
+#header .inner  {
 	background: #51b964;
 }
 #header h1 a {
 	background-image: url("../img/comolo-logo.svg");
 	background-size: 117px;
 	color: rgba(0,0,0,0);
-	padding-left: 60px;
+	padding-left: 70px;
+}
+
+@media (max-width: 767px)
+    #header h1 a {
+        padding-left: 95px;
+    }
+}
+
+@media (max-width: 595px)
+    #header h1 a {
+        display:none;
+    }
+}
+
+#tl_navigation .tl_level_2 li.active {
+    border-left-color: #51b964;
 }
