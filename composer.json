@@ -1,7 +1,7 @@
 {
     "name": "comolo/contao-branding",
-    "description": "Comolo Branding",
-    "type": "symfony-bundle",
+    "description": "Comolo Branding for Contao",
+    "type": "contao-module",
     "license": "proprietary",
     "authors": [
         {
@@ -11,11 +11,14 @@
         }
     ],
     "require": {
-		"contao/contao": "~4.2"
+		"contao/core-bundle": "^4.4"
 	},
 	"autoload":{
         "psr-4": {
-            "Comolo\\Contao\\BrandingBundle\\": "src/"
+            "Comolo\\ContaoBrandingBundle\\": "src/"
         }
-	}
+	},
+    "extra": {
+        "contao-manager-plugin": "Comolo\\ContaoBrandingBundle\\ContaoManager\\Plugin"
+    }
 }

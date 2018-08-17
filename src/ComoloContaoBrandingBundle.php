@@ -8,7 +8,7 @@
  * @copyright 2016 - Hendrik Obermayer - Comolo GmbH
  * @license   LGPL
  */
-namespace Comolo\Contao\BrandingBundle;
+namespace Comolo\ContaoBrandingBundle;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
