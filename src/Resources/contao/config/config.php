@@ -11,5 +11,7 @@
  * @copyright Comolo GmbH 2016
  */
 
-// Add backend CSS
-$GLOBALS['TL_CSS'][] = '/bundles/comolocontaobranding/css/backend.css';
+// Add backend CSS only in backend context
+if (isset($GLOBALS['objPage']) && $GLOBALS['objPage']->type === 'backend') {
+    $GLOBALS['TL_CSS'][] = '/bundles/comolocontaobranding/css/backend.css';
+}
