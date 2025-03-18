@@ -10,21 +10,38 @@
  */
 namespace Comolo\ContaoBrandingBundle\Module;
 
-use Environment;
+use Contao\CoreBundle\Framework\ContaoFramework;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Contao\CoreBundle\Event\BackendTemplateEvent;
+use Symfony\Component\HttpKernel\KernelInterface;
 
-class BrandingManager
+class BrandingManager implements EventSubscriberInterface
 {
-	public function parseBackendTemplate($strContent, $strTemplate)
+	private ContaoFramework $framework;
+	private KernelInterface $kernel;
+
+	public function __construct(ContaoFramework $framework, KernelInterface $kernel)
 	{
-		if ($strTemplate == 'be_login')
-        {
-			$environment = Environment::getInstance();
+		$this->framework = $framework;
+		$this->kernel = $kernel;
+	}
 
-			$searchString = '</head>';
-            $cssLink = PHP_EOL.'<link rel="stylesheet" href="'.$environment->path.'/bundles/comolocontaobranding/css/login.css">'.PHP_EOL;
-            $strContent = str_replace($searchString, $cssLink.$searchString, $strContent);
+	public static function getSubscribedEvents(): array
+	{
+		return ['contao.backend_template' => 'onBackendTemplate'];
+	}
+
+	public function onBackendTemplate(BackendTemplateEvent $event): void
+	{
+		$template = $event->getTemplate();
+		
+		if ($template->getName() === 'be_login') {
+			$webDir = $this->kernel->getProjectDir() . '/public';
+			$cssLink = PHP_EOL . '<link rel="stylesheet" href="/bundles/comolocontaobranding/css/login.css">' . PHP_EOL;
+			
+			$content = $event->getContent();
+			$content = str_replace('</head>', $cssLink . '</head>', $content);
+			$event->setContent($content);
 		}
-
-		return $strContent;
 	}
 }

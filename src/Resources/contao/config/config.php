@@ -11,10 +11,5 @@
  * @copyright Comolo GmbH 2016
  */
 
-
-if (TL_MODE == 'BE') {
-	$environment = \Environment::getInstance();
-	$GLOBALS['TL_CSS'][] = $environment->path.'/bundles/comolocontaobranding/css/backend.css';
-}
-
-$GLOBALS['TL_HOOKS']['parseBackendTemplate'][] = array(\Comolo\ContaoBrandingBundle\Module\BrandingManager::class, 'parseBackendTemplate');
+// Add backend CSS
+$GLOBALS['TL_CSS'][] = '/bundles/comolocontaobranding/css/backend.css';
