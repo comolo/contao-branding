@@ -12,6 +12,10 @@
  */
 
 // Add backend CSS only in backend context
-if (isset($GLOBALS['kernel']) && $GLOBALS['kernel']->getContainer()->get('request_stack')->getCurrentRequest()->get('_scope') === 'backend') {
+$container = $GLOBALS['kernel']?->getContainer();
+$request = $container?->get('request_stack')?->getCurrentRequest();
+$isBackend = $request?->get('_scope') === 'backend';
+
+if ($container && $request && $isBackend) {
     $GLOBALS['TL_CSS'][] = '/bundles/comolocontaobranding/css/backend.css';
 }
