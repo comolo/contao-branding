@@ -12,10 +12,12 @@
  */
 
 // Add backend CSS only in backend context
-$container = $GLOBALS['kernel']?->getContainer();
-$request = $container?->get('request_stack')?->getCurrentRequest();
-$isBackend = $request?->get('_scope') === 'backend';
-
-if ($container && $request && $isBackend) {
-    $GLOBALS['TL_CSS'][] = '/bundles/comolocontaobranding/css/backend.css';
+if (class_exists('Contao\System')) {
+    $container = \Contao\System::getContainer();
+    if ($container && $container->has('request_stack')) {
+        $request = $container->get('request_stack')->getCurrentRequest();
+        if ($request && $request->get('_scope') === 'backend') {
+            $GLOBALS['TL_CSS'][] = '/bundles/comolocontaobranding/css/backend.css';
+        }
+    }
 }
