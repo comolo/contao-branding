@@ -1,0 +1,4 @@
+services:
+    Comolo\ContaoBrandingBundle\Module\BrandingManager:
+        tags:
+            - { name: kernel.event_subscriber } 

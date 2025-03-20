@@ -8,6 +8,11 @@
 	background-size: 117px;
 	color: rgba(0,0,0,0);
 	padding-left: 70px;
+
+    span {
+        position: relative;
+        left: -999rem;
+    }
 }
 
 @media (max-width: 767px)
